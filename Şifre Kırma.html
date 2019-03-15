@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="utf-8">
+
+        <title> Şifre Kırma </title>
+
+    </head>
+
+    <body>
+
+        <script>
+            
+            var sifreKul = prompt("Lütfen belirlediğiniz şifreyi giriniz...");
+
+            var sayac = 0;
+
+            while(13 > 3)
+            {
+            
+                var sifreBil = new Array();
+
+                for(var i=0; i < sifreKul.length; i++)
+                {
+                    var karakter = Math.floor(Math.random() * 26) + 65;     // A-Z
+
+                    sifreBil += String.fromCharCode(karakter);
+                }
+                sayac++;
+
+                document.write(sayac + ") " + sifreBil + "<hr>");
+
+                if(sifreBil == sifreKul)
+                {
+                    document.write("Belirlemiş olduğunuz " + sifreBil + " şifresini, " + sayac + ". adımda başarıyla kırdık :D");
+                    break;
+                }
+            }
+
+               
+        </script>
+
+    </body>
+
+</html>

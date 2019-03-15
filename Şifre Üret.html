@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="utf-8">
+        <title> Şifre Üretme </title>
+
+    </head>
+
+    <body>
+
+        <script>
+
+            var sifreBil = new Array();
+
+            var karakter = "";
+
+            var sayi = prompt("Lütfen kaç haneli şifre seçmek istediğinizi yazınız...", "6");
+
+            document.write("Bilgisayarın Sizin İçin Oluşturduğu " + sayi + " Hanelik Şifre => "); 
+
+            for(var i=0; i < sayi; i++)
+            { 
+
+                var secenek = Math.floor(Math.random() * 100); // [0 - 99]
+
+                switch (secenek % 4) 
+                {
+                    // A - Z
+                    case 0 :         
+                        karakter = Math.floor(Math.random() * 26) + 65;
+                        break;
+                    // a - z
+                    case 1 :         
+                        karakter = Math.floor(Math.random() * 26) + 97;
+                        break;
+                    // 0 - 9
+                    case 2 :         
+                        karakter = Math.floor(Math.random() * 10) + 48;
+                        break;
+                    // ! - /
+                    case 3 :         
+                        karakter = Math.floor(Math.random() * 15) + 33;
+                        break;
+                }
+
+                sifreBil += String.fromCharCode(karakter);
+                document.write(String.fromCharCode(karakter));
+            }
+            document.write("<hr>");
+
+            var sifreKul = prompt("Lütfen Bilgisayarın Size Verdiği Şifreyi Giriniz...");
+
+            document.write("Sizin Girdiğiniz Şifre => " + sifreKul + "<hr>");
+
+            document.write("Bilgisayarın Girdiği Şifre => " + sifreBil + "<hr>");
+            
+            if(sifreKul == sifreBil)
+            {
+                document.write("Girdiğiniz şifre doğru :-)");
+            }
+            else
+            {
+                document.write("Girdiğiniz şifre yanlış :-(");
+            }
+
+        </script>
+
+    </body>
+
+</html>
